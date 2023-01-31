@@ -3,8 +3,8 @@ package com.merseyside.calendar.sample.application.main.activity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.merseyside.archy.presentation.activity.BaseBindingActivity
-import com.merseyside.calendar.sample.R
-import com.merseyside.calendar.sample.databinding.ActivityMainBinding
+import com.merseyside.calendar.core.sample.R
+import com.merseyside.calendar.core.sample.databinding.ActivityMainBinding
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 

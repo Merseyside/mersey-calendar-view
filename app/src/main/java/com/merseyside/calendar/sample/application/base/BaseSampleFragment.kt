@@ -4,9 +4,7 @@ import android.view.MenuItem
 import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import com.merseyside.archy.presentation.fragment.BaseBindingFragment
-import com.merseyside.archy.presentation.model.BaseViewModel
 import com.merseyside.archy.presentation.view.OnBackPressedListener
-import com.merseyside.calendar.sample.application.SampleApplication
 
 abstract class BaseSampleFragment<V: ViewDataBinding> : BaseBindingFragment<V>(),
     OnBackPressedListener {

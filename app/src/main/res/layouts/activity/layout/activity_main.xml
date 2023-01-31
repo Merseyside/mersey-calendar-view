@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".application.main.activity.MainActivity">
+        tools:context="com.merseyside.calendar.sample.application.main.activity.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar"

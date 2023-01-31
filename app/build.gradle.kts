@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.merseyside.calendar.sample"
+    namespace = "com.merseyside.calendar.core.sample"
     compileSdk = Application.compileSdk
 
     defaultConfig {
@@ -63,6 +63,7 @@ android {
     sourceSets.getByName("main") {
         res.srcDirs(
             "src/main/res/",
+            "src/main/res/drawable",
             "src/main/res/layouts/fragment",
             "src/main/res/layouts/activity",
             "src/main/res/layouts/dialog",
@@ -99,7 +100,7 @@ val merseyLibs = listOf(
 )
 
 dependencies {
-    implementation(projects.calendarView)
+    implementation(projects.calendarViews)
 
     androidLibz.forEach { lib -> implementation(lib) }
     merseyLibs.forEach { lib -> implementation(lib) }

@@ -1,27 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.merseyside.calendar.sample.view.CalendarFragment">
+    tools:context="com.merseyside.calendar.core.sample.com.merseyside.calendar.sample.simple.view.CalendarFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/normal_spacing">
+        android:paddingHorizontal="@dimen/normal_spacing"
+        android:paddingVertical="@dimen/small_spacing">
 
-        <com.merseyside.calendar.weekView.WeekView
+        <com.merseyside.calendar.core.weekDayView.WeekDaysView
+            android:id="@+id/weekdays_view"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/month_view"
+            app:layout_constraintStart_toStartOf="@id/month_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:weekdayLength="4" />
+
+        <com.merseyside.calendar.core.weekView.WeekView
             android:id="@+id/week_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible" />
+            android:layout_height="48dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/weekdays_view"
+            app:timeSelectable="true" />
 
-        <com.merseyside.calendar.monthView.MonthView
+        <com.merseyside.calendar.core.monthView.MonthView
             android:id="@+id/month_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/very_large_spacing"
-            android:visibility="visible" />
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="@dimen/small_spacing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/week_view"
+            app:timeSelectable="true" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/prev_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Prev"
+                android:layout_marginEnd="@dimen/very_small_spacing"/>
+
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Next"
+                android:layout_marginStart="@dimen/very_small_spacing"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

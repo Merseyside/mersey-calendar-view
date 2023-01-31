@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.merseyside.calendar.core.sample.com.merseyside.calendar.sample.motionWeekMonth.MotionMonthWeekMotionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_spacing"
+            motion:layoutDescription="@xml/fragment_motion_scene"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/calendar_container"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/calendar_container_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/month_view_container"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/calendar_container_expanded_size"
+                app:layout_constraintBottom_toTopOf="@id/week_view_container"
+                app:layout_constraintEnd_toEndOf="@id/calendar_container"
+                app:layout_constraintStart_toStartOf="@id/calendar_container">
+
+                <com.merseyside.calendar.core.weekDayView.WeekDaysView
+                    android:id="@+id/weekdays_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/month_view"
+                    app:layout_constraintStart_toStartOf="@id/month_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:weekdayLength="3" />
+
+                <com.merseyside.calendar.core.monthView.MonthView
+                    android:id="@+id/month_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekdays_month"
+                    app:timeSelectable="true" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/week_view_container"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/calendar_container_size"
+                app:layout_constraintEnd_toEndOf="@id/calendar_container"
+                app:layout_constraintStart_toStartOf="@id/calendar_container"
+                app:layout_constraintTop_toTopOf="@id/calendar_container">
+
+                <com.merseyside.calendar.core.weekDayView.WeekDaysView
+                    android:id="@+id/weekdays_week"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/week_view"
+                    app:layout_constraintStart_toStartOf="@id/week_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:weekdayLength="3" />
+
+                <com.merseyside.calendar.core.weekView.WeekView
+                    android:id="@+id/week_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekdays_week"
+                    app:timeSelectable="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/drag_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/small_spacing"
+                app:layout_constraintTop_toBottomOf="@id/calendar_container"
+                app:srcCompat="@drawable/arrow_down"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

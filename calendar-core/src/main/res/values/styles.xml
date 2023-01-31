@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Mersey.CalendarItemView" parent="android:Widget">
+        <item name="dayContentWidth">48dp</item>
+        <item name="dayContentHeight">32dp</item>
+
+        <item name="dayTextSize">14sp</item>
+        <item name="dayTextColor">@drawable/day_view_text_default_selector</item>
+        <item name="dayBackgroundColor">@drawable/day_view_background_default_selector</item>
+
+        <item name="dayWeekendTextColor">@drawable/weekend_day_view_text_default_selector</item>
+
+        <item name="dayCornerRadius">0dp</item>
+        <item name="dayContentHorizontalPadding">8dp</item>
+        <item name="dayContentVerticalPadding">100dp</item>
+    </style>
+
+    <style name="Widget.Mersey.CalendarItemView.Circle" parent="Widget.Mersey.CalendarItemView">
+        <item name="dayCropCircle">true</item>
+    </style>
+    
+    <style name="Widget.Mersey.WeekDayView" parent="Widget.Mersey.CalendarItemView" />
+
+    <style name="Widget.Mersey.MonthDayView" parent="Widget.Mersey.CalendarItemView">
+        <item name="monthPrevDayBackgroundColor">@drawable/prev_month_day_view_background_default_selector</item>
+        <item name="monthPrevDayTextColor">@drawable/prev_month_day_view_text_default_selector</item>
+    </style>
+
+    <style name="Widget.Mersey.MonthDayView.Circle" parent="Widget.Mersey.MonthDayView">
+        <item name="dayCropCircle">true</item>
+    </style>
+
+    <style name="Widget.Mersey.WeekdayView" parent="Widget.Mersey.CalendarItemView"/>
+
+
+
+
+    <style name="Widget.Mersey.TimeRangeView" parent="android:Widget"/>
+
+    <style name="Widget.Mersey.SelectableTimeRangeView" parent="Widget.Mersey.TimeRangeView">
+        <item name="timeSelectable">false</item>
+        <item name="timeCancellableSelection">false</item>
+    </style>
+
+    <style name="Widget.Mersey.WeekView" parent="Widget.Mersey.SelectableTimeRangeView"/>
+
+    <style name="Widget.Mersey.MonthView" parent="Widget.Mersey.SelectableTimeRangeView">
+        <item name="monthShowOutMonthDays">true</item>
+    </style>
+
+    <style name="Widget.Mersey.WeekDaysView" parent="Widget.Mersey.TimeRangeView">
+
+        <item name="weekdayLength">2</item>
+    </style>
+
+
+</resources>

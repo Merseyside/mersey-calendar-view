@@ -23,7 +23,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorSecondary">@color/grey</item>
 
-        <item name="dayViewStyle">@style/Widget.Mersey.CalendarItemView</item>
+        <item name="numberDayViewStyle">@style/Widget.Mersey.CalendarItemView</item>
 
     </style>
 

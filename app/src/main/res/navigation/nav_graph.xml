@@ -16,13 +16,24 @@
             android:id="@+id/action_mainFragment_to_calendarFragment"
             app:destination="@id/calendarFragment" />
 
+        <action
+            android:id="@+id/action_mainFragment_to_motionFragment"
+            app:destination="@id/weekMonthMotionFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.merseyside.calendar.sample.view.CalendarFragment"
+        android:name="com.merseyside.calendar.sample.simple.view.CalendarFragment"
         android:label="calendar_fragment"
         tools:layout="@layout/fragment_calendar"
+        app:navGraph="@navigation/nav_graph" />
+
+    <fragment
+        android:id="@+id/weekMonthMotionFragment"
+        android:name="com.merseyside.calendar.sample.motionWeekMonth.MotionMonthWeekMotionFragment"
+        android:label="motion_fragment"
+        tools:layout="@layout/fragment_motion"
         app:navGraph="@navigation/nav_graph" />
 
 </navigation>
