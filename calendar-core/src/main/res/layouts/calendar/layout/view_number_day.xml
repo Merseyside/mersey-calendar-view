@@ -4,10 +4,10 @@
     <data>
         <variable
             name="model"
-            type="com.merseyside.calendar.core.numberView.model.NumberDayViewModel" />
+            type="com.merseyside.calendar.core.dayViews.numberView.model.NumberDayViewModel" />
     </data>
 
-    <com.merseyside.calendar.core.numberView.view.NumberDayView
+    <com.merseyside.calendar.core.dayViews.numberView.view.NumberDayView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         numberDayModel="@{model}"

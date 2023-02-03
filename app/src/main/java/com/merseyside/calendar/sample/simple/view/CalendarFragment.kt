@@ -33,9 +33,10 @@ class CalendarFragment : BaseBindingFragment<FragmentCalendarBinding>() {
 
             weekView.apply {
                 setTime(time)
-                onSelect { range, _, _ -> range.logHuman("kek") }
+                onSelect { range, _, _ -> range.logHuman("CalandarSelect") }
             }
             monthView.setTime(time)
+            numberWeekDayWeekView.setTime(time)
         }
     }
 }

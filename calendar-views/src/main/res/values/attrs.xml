@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="DefaultStylesTheme" format="reference">
+        <attr name="simpleNumberWeekDaysWeekViewStyle" format="reference" />
+
+        <attr name="numberWeekDayViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberWeekDayView" parent="NumberDayView">
+        <attr name="numberWeekDayTextSize" format="dimension" />
+        <attr name="numberWeekDayTextColor" format="color" />
+        <attr name="numberWeekDayIndex" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleNumberWeekDaysWeekView" parent="WeekView">
+        <attr name="numberWeekDayLength" format="integer" />
+    </declare-styleable>
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Widget.Mersey.CalendarItemView" parent="android:Widget">
-        <item name="dayContentWidth">48dp</item>
-        <item name="dayContentHeight">32dp</item>
+        <item name="dayContentWidth">16dp</item>
+        <item name="dayContentHeight">16dp</item>
 
         <item name="dayTextSize">14sp</item>
         <item name="dayTextColor">@drawable/day_view_text_default_selector</item>
@@ -12,16 +12,20 @@
 
         <item name="dayCornerRadius">0dp</item>
         <item name="dayContentHorizontalPadding">8dp</item>
-        <item name="dayContentVerticalPadding">100dp</item>
+        <item name="dayContentVerticalPadding">8dp</item>
     </style>
 
     <style name="Widget.Mersey.CalendarItemView.Circle" parent="Widget.Mersey.CalendarItemView">
         <item name="dayCropCircle">true</item>
     </style>
-    
-    <style name="Widget.Mersey.WeekDayView" parent="Widget.Mersey.CalendarItemView" />
 
-    <style name="Widget.Mersey.MonthDayView" parent="Widget.Mersey.CalendarItemView">
+    <style name="Widget.Mersey.NumberDayView" parent="Widget.Mersey.CalendarItemView" />
+
+    <style name="Widget.Mersey.NumberDayView.Circle" parent="Widget.Mersey.CalendarItemView.Circle" />
+    
+    <style name="Widget.Mersey.WeekDayView" parent="Widget.Mersey.NumberDayView" />
+
+    <style name="Widget.Mersey.MonthDayView" parent="Widget.Mersey.NumberDayView">
         <item name="monthPrevDayBackgroundColor">@drawable/prev_month_day_view_background_default_selector</item>
         <item name="monthPrevDayTextColor">@drawable/prev_month_day_view_text_default_selector</item>
     </style>
@@ -30,7 +34,12 @@
         <item name="dayCropCircle">true</item>
     </style>
 
-    <style name="Widget.Mersey.WeekdayView" parent="Widget.Mersey.CalendarItemView"/>
+    <style name="Widget.Mersey.WeekdayView" parent="Widget.Mersey.CalendarItemView">
+        <item name="dayContentWidth">0dp</item>
+        <item name="dayContentHeight">16dp</item>
+        <item name="dayContentHorizontalPadding">0dp</item>
+        <item name="dayContentVerticalPadding">0dp</item>
+    </style>
 
 
 
@@ -49,7 +58,6 @@
     </style>
 
     <style name="Widget.Mersey.WeekDaysView" parent="Widget.Mersey.TimeRangeView">
-
         <item name="weekdayLength">2</item>
     </style>
 

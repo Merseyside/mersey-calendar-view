@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <merge>
+        <com.merseyside.calendar.core.recycler.timeUnitRecyclerView.TimeUnitRecyclerView
+            android:id="@+id/recycler_week_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.merseyside.calendar.core.recycler.timeUnitRecyclerView.TimeUnitRecyclerView>
+    </merge>
+
+</layout>

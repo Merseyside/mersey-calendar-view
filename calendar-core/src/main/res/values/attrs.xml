@@ -3,6 +3,7 @@
 
     <declare-styleable name="DefaultStylesTheme" format="reference">
         <attr name="numberDayViewStyle" format="reference" />
+        <attr name="numberWeekDayViewStyle" format="reference" />
         <attr name="weekDayViewStyle" format="reference" />
         <attr name="monthDayViewStyle" format="reference" />
         <attr name="weekdayViewStyle" format="reference" />
@@ -47,6 +48,9 @@
     <declare-styleable name="WeekdayView" parent="DayItemView">
         <attr name="weekdayIndex" format="integer" />
     </declare-styleable>
+
+
+<!--  Ranges  -->
 
     <declare-styleable name="TimeRangeView" />
 

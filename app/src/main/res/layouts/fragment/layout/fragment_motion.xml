@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="@id/calendar_container"
                 app:layout_constraintStart_toStartOf="@id/calendar_container">
 
-                <com.merseyside.calendar.core.weekDayView.WeekDaysView
+                <com.merseyside.calendar.views.rangeViews.weekDaysView.view.SimpleWeekDaysView
                     android:id="@+id/weekdays_month"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:weekdayLength="3" />
 
-                <com.merseyside.calendar.core.monthView.MonthView
+                <com.merseyside.calendar.views.rangeViews.monthView.SimpleMonthView
                     android:id="@+id/month_view"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -61,7 +61,7 @@
                 app:layout_constraintStart_toStartOf="@id/calendar_container"
                 app:layout_constraintTop_toTopOf="@id/calendar_container">
 
-                <com.merseyside.calendar.core.weekDayView.WeekDaysView
+                <com.merseyside.calendar.views.rangeViews.weekDaysView.view.SimpleWeekDaysView
                     android:id="@+id/weekdays_week"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:weekdayLength="3" />
 
-                <com.merseyside.calendar.core.weekView.WeekView
+                <com.merseyside.calendar.views.rangeViews.weekView.SimpleWeekView
                     android:id="@+id/week_view"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

@@ -43,7 +43,10 @@ android {
     val basePath = "src/main/res"
     sourceSets.getByName("main") {
         res.srcDir(basePath)
-        res.srcDir("$basePath/layouts/calendar")
+        res.srcDir("$basePath/layouts/month")
+        res.srcDir("$basePath/layouts/week")
+        res.srcDir("$basePath/layouts/weekDay")
+        res.srcDir("$basePath/layouts/numberWeekDay")
     }
 }
 

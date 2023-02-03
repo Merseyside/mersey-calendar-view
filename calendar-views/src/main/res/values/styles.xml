@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Widget.Mersey.NumberWeekDayView" parent="Widget.Mersey.NumberDayView">
+        <item name="numberWeekDayTextSize">@dimen/small_text_size</item>
+
+        <item name="dayContentWidth">28dp</item>
+        <item name="dayContentHeight">42dp</item>
+        <item name="dayCornerRadius">@dimen/normal_spacing</item>
+        <item name="dayContentVerticalPadding">8dp</item>
+
+        <item name="dayBackgroundColor">@drawable/day_view_background_selector</item>
+    </style>
+
+
+<!--    Ranges    -->
+
+    <style name="Widget.Mersey.SimpleNumberWeekDaysWeekView" parent="Widget.Mersey.WeekView">
+        <item name="numberWeekDayLength">4</item>
+    </style>
 </resources>

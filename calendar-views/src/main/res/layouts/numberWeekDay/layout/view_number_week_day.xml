@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.merseyside.calendar.views.dayViews.numberWeekDayView.model.NumberWeekDayViewModel" />
+    </data>
+
+    <com.merseyside.calendar.views.dayViews.numberWeekDayView.view.NumberWeekDayView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{_ -> model.selectState.onSelect()}"
+        android:selected="@{model.selectState.selectedObservable.value}"
+        isVisible="@{model.visible}"
+        numberWeekDayModel="@{model}" />
+
+</layout>
