@@ -4,12 +4,17 @@
     <style name="Widget.Mersey.NumberWeekDayView" parent="Widget.Mersey.NumberDayView">
         <item name="numberWeekDayTextSize">@dimen/small_text_size</item>
 
-        <item name="dayContentWidth">28dp</item>
+        <item name="dayContentWidth">36dp</item>
         <item name="dayContentHeight">42dp</item>
         <item name="dayCornerRadius">@dimen/normal_spacing</item>
         <item name="dayContentVerticalPadding">8dp</item>
 
-        <item name="dayBackgroundColor">@drawable/day_view_background_selector</item>
+        <item name="dayBackgroundColor">@color/day_view_background_selector</item>
+    </style>
+
+    <style name="Widget.Mersey.NumberWeekDayView.Stroke" parent="Widget.Mersey.NumberWeekDayView">
+        <item name="dayBackgroundStrokeColor">@color/day_view_background_stroke_selector</item>
+        <item name="dayBackgroundStrokeWidth">1dp</item>
     </style>
 
 

@@ -81,7 +81,7 @@
         <Constraint android:id="@id/week_view_container"
             android:layout_width="0dp"
             android:layout_height="@dimen/calendar_container_size"
-            motion:layout_constraintTop_toBottomOf="@id/drag_view"
+            motion:layout_constraintBottom_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="@id/calendar_container"
             motion:layout_constraintEnd_toEndOf="@id/calendar_container">
             <PropertySet android:alpha="0" />

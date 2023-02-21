@@ -6,12 +6,12 @@
 
         <variable
             name="model"
-            type="com.merseyside.calendar.views.dayViews.numberWeekDayView.model.NumberWeekDayViewModel" />
+            type="com.merseyside.calendar.core.rangeViews.numberWeekDaysWeekView.model.NumberWeekDayViewModel" />
     </data>
 
     <com.merseyside.calendar.views.dayViews.numberWeekDayView.view.NumberWeekDayView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:onClick="@{_ -> model.selectState.onSelect()}"
         android:selected="@{model.selectState.selectedObservable.value}"
         isVisible="@{model.visible}"

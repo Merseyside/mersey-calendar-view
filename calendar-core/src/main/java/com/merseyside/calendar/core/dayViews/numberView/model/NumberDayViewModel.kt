@@ -14,7 +14,7 @@ open class NumberDayViewModel(item: TimeRange) : TimeRangeViewModel(item), Selec
     override val selectState: SelectState = SelectState()
 
     @get:Bindable
-    val dayNumber: Int = item.start.toDayOfMonth().intValue
+    val dayNumber: Int = item.start.toDayOfMonth()
 
     final override val isWeekend: Boolean = item.start.toDayOfWeek().isWeekendDay()
 }

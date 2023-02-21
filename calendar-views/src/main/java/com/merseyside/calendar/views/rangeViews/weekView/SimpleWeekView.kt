@@ -20,14 +20,18 @@ import com.merseyside.utils.delegate.viewBinding
 class SimpleWeekView(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
     WeekView<NumberDayViewModel>(context, attrs, defStyleAttr) {
 
-    constructor(context: Context, attrs: AttributeSet): this(context, attrs, R.attr.weekViewStyle)
+    constructor(context: Context, attrs: AttributeSet) : this(
+        context,
+        attrs,
+        R.attr.simpleWeekViewStyle
+    )
 
     private val binding: ViewWeekTimeUnitBinding by viewBinding(R.layout.view_week_time_unit)
     override val recycler: WeekRecyclerView
         get() = binding.recyclerWeek
 
 
-    override fun provideAdapter(timeRange: WeekRange): TimeRangeAdapter<out TimeRangeViewModel> {
+    override fun provideAdapter(timeRange: WeekRange): TimeRangeAdapter<NumberDayViewModel> {
         return WeekDayAdapter {
             adapterConfigure()
         }

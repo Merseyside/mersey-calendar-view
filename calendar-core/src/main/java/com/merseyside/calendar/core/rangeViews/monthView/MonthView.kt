@@ -4,15 +4,15 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.RecyclerView
 import com.merseyside.calendar.core.R
+import com.merseyside.calendar.core.rangeViews.base.timeRange.view.SelectableTimeRangeView
 import com.merseyside.calendar.core.rangeViews.monthView.adapter.MonthDayAdapter
 import com.merseyside.calendar.core.rangeViews.monthView.model.MonthDayViewModel
-import com.merseyside.calendar.core.rangeViews.base.timeRange.view.SelectableTimeRangeView
 import com.merseyside.merseyLib.time.ext.*
 import com.merseyside.merseyLib.time.ranges.MonthRange
 import com.merseyside.merseyLib.time.ranges.TimeRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.attributes.AttributeHelper
-import com.merseyside.utils.delegate.bool
+import com.merseyside.utils.attributes1.AttributeHelper
+import com.merseyside.utils.attributes1.bool
 import com.merseyside.utils.layout.AutofitGridLayoutManager
 
 /**
@@ -28,17 +28,15 @@ abstract class MonthView<ViewModel : MonthDayViewModel>(
         context,
         attributeSet,
         R.styleable.MonthView,
-        "MonthView",
         defStyleAttr,
-        0,
-        "month"
+        0
     )
 
-    private val showOutMonthDays: Boolean by attrs.bool()
+    protected val showOutMonthDays: Boolean by attrs.bool(R.styleable.MonthView_monthShowOutMonthDays)
 
-    abstract fun provideAdapter(timeRange: MonthRange, showOutMonthDays: Boolean): MonthDayAdapter
+    abstract fun provideAdapter(timeRange: MonthRange, showOutMonthDays: Boolean): MonthDayAdapter<ViewModel>
 
-    final override fun provideAdapter(timeRange: MonthRange): MonthDayAdapter {
+    final override fun provideAdapter(timeRange: MonthRange): MonthDayAdapter<ViewModel> {
         return provideAdapter(timeRange, showOutMonthDays)
     }
 

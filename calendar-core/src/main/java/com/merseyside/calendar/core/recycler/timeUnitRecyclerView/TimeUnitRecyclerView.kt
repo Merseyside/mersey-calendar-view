@@ -8,4 +8,8 @@ open class TimeUnitRecyclerView(context: Context, attrs: AttributeSet, defStyle:
     RecyclerView(context, attrs, defStyle) {
 
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
+
+    init {
+        overScrollMode = OVER_SCROLL_NEVER
+    }
 }

@@ -4,12 +4,13 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.util.AttributeSet
 import com.merseyside.calendar.core.R
-import com.merseyside.calendar.core.rangeViews.monthView.model.MonthDayViewModel
-import com.merseyside.calendar.core.dayViews.numberView.view.NumberDayView
 import com.merseyside.calendar.core.dayViews.numberView.model.NumberDayViewModel
-import com.merseyside.utils.attributes.AttributeHelper
-import com.merseyside.utils.delegate.bool
-import com.merseyside.utils.delegate.colorStateList
+import com.merseyside.calendar.core.dayViews.numberView.view.NumberDayView
+import com.merseyside.calendar.core.rangeViews.monthView.model.MonthDayViewModel
+import com.merseyside.merseyLib.kotlin.utils.safeLet
+import com.merseyside.utils.attributes1.AttributeHelper
+import com.merseyside.utils.attributes1.bool
+import com.merseyside.utils.attributes1.colorStateListOrNull
 
 class MonthDayView(
     context: Context,
@@ -23,28 +24,34 @@ class MonthDayView(
         context,
         attributeSet,
         R.styleable.MonthDayView,
-        "MonthDayView",
         defStyleAttr,
-        0,
-        "month"
+        0
     )
 
-    private var isOutMonthDay by attrs.bool()
-    private val prevDayTextColor by attrs.colorStateList()
-    private val prevDayBackgroundColor by attrs.colorStateList()
+    private var isOutMonthDay by attrs.bool(R.styleable.MonthDayView_monthIsOutMonthDay)
+    private val outDayTextColor by attrs.colorStateListOrNull(R.styleable.MonthDayView_monthOutDayTextColor)
+    private val outDayBackgroundColor by attrs.colorStateListOrNull(R.styleable.MonthDayView_monthOutDayBackgroundColor)
 
     override val backgroundColor: ColorStateList
         get() {
-            return if (isOutMonthDay) {
-                prevDayBackgroundColor
-            } else super.backgroundColor
+            if (isOutMonthDay) {
+                safeLet(outDayBackgroundColor) {
+                    return it
+                }
+            }
+
+            return super.backgroundColor
         }
 
     override val textColor: ColorStateList
         get() {
-            return if (isOutMonthDay) {
-                prevDayTextColor
-            } else super.textColor
+            if (isOutMonthDay) {
+                safeLet(outDayTextColor) {
+                    return it
+                }
+            }
+
+            return super.textColor
         }
 
 

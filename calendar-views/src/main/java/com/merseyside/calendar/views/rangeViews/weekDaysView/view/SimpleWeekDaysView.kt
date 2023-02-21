@@ -13,13 +13,13 @@ import com.merseyside.merseyLib.time.ranges.WeekRange
 import com.merseyside.utils.delegate.getValue
 import com.merseyside.utils.delegate.viewBinding
 
-open class SimpleWeekDaysView(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) :
+class SimpleWeekDaysView(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) :
     WeekDaysView<WeekdayViewModel>(context, attributeSet, defStyleAttr) {
 
     constructor(context: Context, attributeSet: AttributeSet) : this(
         context,
         attributeSet,
-        R.attr.weekdaysViewStyle
+        R.attr.simpleWeekdaysViewStyle
     )
 
     private val binding: ViewWeekDayTimeUnitBinding by viewBinding(R.layout.view_week_day_time_unit)

@@ -4,7 +4,7 @@ import com.merseyside.calendar.core.rangeViews.base.timeRange.adapter.TimeRangeA
 import com.merseyside.calendar.core.rangeViews.base.timeRange.model.TimeRangeViewModel
 import com.merseyside.merseyLib.time.ranges.TimeRange
 
-class TimeRangeAdapterProvider<TR : TimeRange, Adapter : TimeRangeAdapter<out TimeRangeViewModel>> {
+class TimeRangeAdapterProvider<TR : TimeRange, Adapter : TimeRangeAdapter<Model>, Model : TimeRangeViewModel> {
 
     private val adapterMap: MutableMap<TR, Adapter> = mutableMapOf()
     var currentAdapter: Adapter? = null
@@ -20,11 +20,6 @@ class TimeRangeAdapterProvider<TR : TimeRange, Adapter : TimeRangeAdapter<out Ti
             findAdapter(timeRange) ?: callback.createAdapterWithTimeRange(timeRange).also { adapter ->
 
                 adapterMap[timeRange] = adapter
-//                var tempRange = timeRange
-//                (0..20).forEach { _ ->
-//                    tempRange = callback.getNextTimeRange(tempRange)
-//                    callback.createAdapterWithTimeRange(tempRange).also { adapterMap[tempRange] = it }
-//                }
             }
         }.also { currentAdapter = it }
     }
@@ -36,8 +31,5 @@ class TimeRangeAdapterProvider<TR : TimeRange, Adapter : TimeRangeAdapter<out Ti
 
     interface ProviderCallback<TR : TimeRange, Adapter : TimeRangeAdapter<out TimeRangeViewModel>> {
         fun createAdapterWithTimeRange(timeRange: TR): Adapter
-
-        fun getNextTimeRange(timeRange: TR): TR
-
     }
 }

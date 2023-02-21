@@ -2,7 +2,6 @@ package com.merseyside.calendar.core.rangeViews.base.timeRange.view
 
 import android.content.Context
 import android.util.AttributeSet
-import com.merseyside.calendar.core.R
 import com.merseyside.calendar.core.rangeViews.base.timeRange.adapter.TimeRangeAdapter
 import com.merseyside.calendar.core.rangeViews.base.timeRange.model.TimeRangeViewModel
 import com.merseyside.calendar.core.rangeViews.base.timeRange.provider.TimeRangeAdapterProvider
@@ -14,26 +13,16 @@ abstract class MutableTimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
     defStyleAttr: Int
 ) : TimeRangeView<TR, Model>(context, attributeSet, defStyleAttr) {
 
-    constructor(context: Context, attrs: AttributeSet) : this(
-        context,
-        attrs,
-        R.attr.selectableTimeRangeViewStyle
-    )
+    private val timeRangeAdapterProvider =
+        TimeRangeAdapterProvider<TR, TimeRangeAdapter<Model>, Model>()
 
-    protected val timeRangeAdapterProvider =
-        TimeRangeAdapterProvider<TR, TimeRangeAdapter<out TimeRangeViewModel>>()
-
-    abstract fun provideAdapter(timeRange: TR): TimeRangeAdapter<out TimeRangeViewModel>
+    abstract fun provideAdapter(timeRange: TR): TimeRangeAdapter<Model>
 
     init {
         timeRangeAdapterProvider.setProviderCallback(object :
-            TimeRangeAdapterProvider.ProviderCallback<TR, TimeRangeAdapter<out TimeRangeViewModel>> {
-            override fun createAdapterWithTimeRange(timeRange: TR): TimeRangeAdapter<out TimeRangeViewModel> {
+            TimeRangeAdapterProvider.ProviderCallback<TR, TimeRangeAdapter<Model>> {
+            override fun createAdapterWithTimeRange(timeRange: TR): TimeRangeAdapter<Model> {
                 return provideAdapter(timeRange)
-            }
-
-            override fun getNextTimeRange(timeRange: TR): TR {
-                return getNextRange(timeRange)
             }
         })
     }
@@ -42,20 +31,30 @@ abstract class MutableTimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
 
     protected abstract fun getPrevRange(timeRange: TR): TR
 
-    final override fun getTimeRangeAdapter(timeRange: TR): TimeRangeAdapter<out TimeRangeViewModel> {
+    final override fun getTimeRangeAdapter(timeRange: TR): TimeRangeAdapter<Model> {
         return timeRangeAdapterProvider.getTimeRangeAdapter(timeRange)
     }
+
+    final override fun onTimeRangeUpdated(timeRange: TR) {
+        super.onTimeRangeUpdated(timeRange)
+        onTimeRangeUpdated(timeRange, timeRangeAdapterProvider.getTimeRangeAdapter(timeRange))
+    }
+
+    open fun onTimeRangeUpdated(
+        timeRange: TimeRange,
+        adapter: TimeRangeAdapter<out TimeRangeViewModel>
+    ) {}
 
     /**
      * Calculates and shows next
      */
-    fun next() {
+    fun next(onComplete: (Unit) -> Unit = {}) {
         timeRange = getNextRange(timeRange)
-        invalidateTimeRange(timeRange)
+        invalidateTimeRange(timeRange, onComplete = onComplete)
     }
 
-    fun previous() {
+    fun previous(onComplete: (Unit) -> Unit = {}) {
         timeRange = getPrevRange(timeRange)
-        invalidateTimeRange(timeRange)
+        invalidateTimeRange(timeRange, onComplete = onComplete)
     }
 }

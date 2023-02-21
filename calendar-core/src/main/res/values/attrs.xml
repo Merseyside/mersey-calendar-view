@@ -4,22 +4,29 @@
     <declare-styleable name="DefaultStylesTheme" format="reference">
         <attr name="numberDayViewStyle" format="reference" />
         <attr name="numberWeekDayViewStyle" format="reference" />
+        <attr name="numberWeekDayStrokeViewStyle" format="reference" />
         <attr name="weekDayViewStyle" format="reference" />
         <attr name="monthDayViewStyle" format="reference" />
         <attr name="weekdayViewStyle" format="reference" />
 
-        <attr name="timeRangeViewStyle" format="reference" />
-        <attr name="selectableTimeRangeViewStyle" format="reference" />
-        <attr name="weekViewStyle" format="reference" />
-        <attr name="monthViewStyle" format="reference" />
-        <attr name="weekdaysViewStyle" format="reference" />
+<!--        <attr name="timeRangeViewStyle" format="reference" />-->
+<!--        <attr name="selectableTimeRangeViewStyle" format="reference" />-->
+
 
     </declare-styleable>
 
     <declare-styleable name="DayItemView">
         <attr name="dayTextSize" format="dimension" />
+        <attr name="dayTextFontFamily" format="reference" />
+        <attr name="dayTextStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+        </attr>
         <attr name="dayTextColor" format="color" />
         <attr name="dayBackgroundColor" format="color" />
+        <attr name="dayBackgroundStrokeColor" format="color" />
+        <attr name="dayBackgroundStrokeWidth" format="dimension" />
 
         <attr name="dayWeekendTextColor" format="color" />
         <attr name="dayWeekendBackgroundColor" format="color" />
@@ -33,6 +40,8 @@
         <attr name="dayContentVerticalPadding" format="dimension" />
 
         <attr name="dayCropCircle" format="boolean" />
+
+        <attr name="dayElevation" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="NumberDayView" parent="DayView">
@@ -41,8 +50,8 @@
 
     <declare-styleable name="MonthDayView" parent="NumberDayView">
         <attr name="monthIsOutMonthDay" format="boolean"/>
-        <attr name="monthPrevDayTextColor" format="color" />
-        <attr name="monthPrevDayBackgroundColor" format="color" />
+        <attr name="monthOutDayTextColor" format="color" />
+        <attr name="monthOutDayBackgroundColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="WeekdayView" parent="DayItemView">
@@ -61,6 +70,10 @@
 
     <declare-styleable name="WeekView" parent="SelectableTimeRangeView"/>
 
+    <declare-styleable name="NumberWeekDaysWeekView" parent="WeekView">
+        <attr name="numberWeekDayLength" format="integer" />
+    </declare-styleable>
+
     <declare-styleable name="MonthView" parent="SelectableTimeRangeView">
         <attr name="monthShowOutMonthDays" format="boolean" />
     </declare-styleable>
@@ -68,4 +81,6 @@
     <declare-styleable name="WeekDaysView" parent="TimeRangeView">
         <attr name="weekdayLength" format="integer" />
     </declare-styleable>
+
+
 </resources>

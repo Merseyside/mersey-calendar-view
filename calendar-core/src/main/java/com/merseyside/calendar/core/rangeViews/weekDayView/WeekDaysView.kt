@@ -12,8 +12,8 @@ import com.merseyside.calendar.core.rangeViews.weekDayView.model.WeekdayViewMode
 import com.merseyside.merseyLib.time.ext.toWeekRange
 import com.merseyside.merseyLib.time.ranges.WeekRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.attributes.AttributeHelper
-import com.merseyside.utils.delegate.int
+import com.merseyside.utils.attributes1.AttributeHelper
+import com.merseyside.utils.attributes1.int
 import com.merseyside.utils.layout.AutofitLinearLayoutManager
 
 /**
@@ -30,13 +30,11 @@ abstract class WeekDaysView<ViewModel : WeekdayViewModel>(
         context,
         attributeSet,
         R.styleable.WeekDaysView,
-        "WeekDaysView",
         defStyleAttr,
-        0,
-        "weekday"
+        0
     )
 
-    private val weekdayLength by attrs.int(resName = "length")
+    private val weekdayLength by attrs.int(R.styleable.WeekDaysView_weekdayLength)
 
     private val pattern: String by lazy {
         "E".repeat(weekdayLength)
@@ -44,11 +42,9 @@ abstract class WeekDaysView<ViewModel : WeekdayViewModel>(
 
     abstract fun getTimeRangeAdapter(timeRange: WeekRange, pattern: String): WeekdayAdapter
 
-    final override fun getTimeRangeAdapter(timeRange: WeekRange): TimeRangeAdapter<out TimeRangeViewModel> {
-        return getTimeRangeAdapter(timeRange, pattern)
+    final override fun getTimeRangeAdapter(timeRange: WeekRange): TimeRangeAdapter<ViewModel> {
+        return getTimeRangeAdapter(timeRange, pattern) as TimeRangeAdapter<ViewModel>
     }
-
-    override suspend fun onItemsAdded() {}
 
     final override fun getTimeRange(time: TimeUnit): WeekRange {
         return time.toWeekRange()

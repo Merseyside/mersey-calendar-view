@@ -15,5 +15,5 @@
     <dimen name="very_large_text_size">36sp</dimen>
 
     <dimen name="calendar_container_size">72dp</dimen>
-    <dimen name="calendar_container_expanded_size">300dp</dimen>
+    <dimen name="calendar_container_expanded_size">200dp</dimen>
 </resources>

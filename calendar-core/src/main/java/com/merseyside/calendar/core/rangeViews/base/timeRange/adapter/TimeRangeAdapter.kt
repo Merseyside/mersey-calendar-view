@@ -9,5 +9,17 @@ import com.merseyside.merseyLib.time.ranges.TimeRange
 abstract class TimeRangeAdapter<T : TimeRangeViewModel>(adapterConfig: AdapterConfig<TimeRange, T>) :
     SimpleAdapter<TimeRange, T>(adapterConfig) {
 
+    init {
+        setHasStableIds(true)
+    }
+
+    override fun setHasStableIds(hasStableIds: Boolean) {
+        super.setHasStableIds(hasStableIds)
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
     override fun getBindingVariable() = BR.model
 }

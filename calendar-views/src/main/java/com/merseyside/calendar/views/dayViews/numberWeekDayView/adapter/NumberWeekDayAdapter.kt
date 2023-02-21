@@ -4,7 +4,7 @@ import com.merseyside.adapters.core.config.AdapterConfig
 import com.merseyside.adapters.core.config.init.initAdapter
 import com.merseyside.calendar.core.dayViews.numberView.adapter.NumberDayAdapter
 import com.merseyside.calendar.views.R
-import com.merseyside.calendar.views.dayViews.numberWeekDayView.model.NumberWeekDayViewModel
+import com.merseyside.calendar.core.rangeViews.numberWeekDaysWeekView.model.NumberWeekDayViewModel
 import com.merseyside.merseyLib.time.ranges.TimeRange
 
 class NumberWeekDayAdapter(

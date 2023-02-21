@@ -2,9 +2,12 @@
 <resources>
 
     <declare-styleable name="DefaultStylesTheme" format="reference">
-        <attr name="simpleNumberWeekDaysWeekViewStyle" format="reference" />
-
         <attr name="numberWeekDayViewStyle" format="reference" />
+
+        <attr name="simpleWeekViewStyle" format="reference" />
+        <attr name="simpleNumberWeekDaysWeekViewStyle" format="reference" />
+        <attr name="simpleMonthViewStyle" format="reference" />
+        <attr name="simpleWeekdaysViewStyle" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="NumberWeekDayView" parent="NumberDayView">
@@ -13,7 +16,4 @@
         <attr name="numberWeekDayIndex" format="integer" />
     </declare-styleable>
 
-    <declare-styleable name="SimpleNumberWeekDaysWeekView" parent="WeekView">
-        <attr name="numberWeekDayLength" format="integer" />
-    </declare-styleable>
 </resources>

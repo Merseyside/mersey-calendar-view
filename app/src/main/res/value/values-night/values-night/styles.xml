@@ -28,15 +28,14 @@
         <item name="valueSwitcherStyle">@style/Widget.Mersey.ValueSwitcher</item>
 
         <item name="numberDayViewStyle">@style/Widget.Mersey.NumberDayView.Circle</item>
-        <item name="numberWeekDayViewStyle">@style/Widget.Mersey.NumberWeekDayView</item>
+        <item name="numberWeekDayViewStyle">@style/Widget.Mersey.NumberWeekDayView.Stroke</item>
         <item name="weekDayViewStyle">@style/Widget.Mersey.WeekDayView</item>
         <item name="monthDayViewStyle">@style/Widget.Mersey.MonthDayView.Circle</item>
         <item name="weekdayViewStyle">@style/Widget.Mersey.WeekdayView</item>
 
-        <item name="timeRangeViewStyle">@style/Widget.Mersey.TimeRangeView</item>
-        <item name="weekViewStyle">@style/Widget.Mersey.WeekView</item>
-        <item name="monthViewStyle">@style/Widget.Mersey.MonthView</item>
-        <item name="weekdaysViewStyle">@style/Widget.Mersey.WeekDaysView</item>
+        <item name="simpleWeekViewStyle">@style/Widget.Mersey.WeekView</item>
+        <item name="simpleMonthViewStyle">@style/Widget.Mersey.MonthView</item>
+        <item name="simpleWeekdaysViewStyle">@style/Widget.Mersey.WeekDaysView</item>
 
         <item name="simpleNumberWeekDaysWeekViewStyle">@style/Widget.Mersey.SimpleNumberWeekDaysWeekView</item>
 
