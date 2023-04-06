@@ -13,7 +13,6 @@ class MainFragment : BaseSampleFragment<FragmentMainBinding>() {
 
     override fun getLayoutId() = R.layout.fragment_main
     override fun getTitle(context: Context): String = "Choose a feature"
-    override fun hasTitleBackButton() = false
 
     override fun performInjection(bundle: Bundle?, vararg params: Any) {}
 
