@@ -8,9 +8,9 @@ import com.merseyside.calendar.core.dayViews.numberView.model.NumberDayViewModel
 import com.merseyside.calendar.core.dayViews.numberView.view.NumberDayView
 import com.merseyside.calendar.core.rangeViews.monthView.model.MonthDayViewModel
 import com.merseyside.merseyLib.kotlin.utils.safeLet
-import com.merseyside.utils.attributes1.AttributeHelper
-import com.merseyside.utils.attributes1.bool
-import com.merseyside.utils.attributes1.colorStateListOrNull
+import com.merseyside.utils.attributes.AttributeHelper
+import com.merseyside.utils.attributes.bool
+import com.merseyside.utils.attributes.colorStateListOrNull
 
 class MonthDayView(
     context: Context,

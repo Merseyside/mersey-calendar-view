@@ -14,7 +14,7 @@ import com.merseyside.merseyLib.time.ext.contains
 import com.merseyside.merseyLib.time.ext.toDayRanges
 import com.merseyside.merseyLib.time.ranges.TimeRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.attributes1.AttributeHelper
+import com.merseyside.utils.attributes.AttributeHelper
 
 abstract class TimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
     context: Context,

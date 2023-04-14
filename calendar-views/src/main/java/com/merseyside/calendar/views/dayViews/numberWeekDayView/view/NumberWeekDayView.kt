@@ -11,7 +11,7 @@ import com.merseyside.calendar.core.rangeViews.numberWeekDaysWeekView.model.Numb
 import com.merseyside.calendar.views.R
 import com.merseyside.merseyLib.time.ext.getHuman
 import com.merseyside.merseyLib.time.units.DayOfWeek
-import com.merseyside.utils.attributes1.*
+import com.merseyside.utils.attributes.*
 import com.merseyside.utils.view.canvas.HorizontalAlign
 import com.merseyside.utils.view.canvas.VerticalAlign
 import com.merseyside.utils.view.ext.drawTextOnBaseline

@@ -15,12 +15,10 @@ import com.merseyside.calendar.core.R
 import com.merseyside.calendar.core.rangeViews.base.timeRange.model.TimeRangeViewModel
 import com.merseyside.merseyLib.kotlin.extensions.isNotZero
 import com.merseyside.merseyLib.kotlin.extensions.isZero
-import com.merseyside.merseyLib.kotlin.logger.log
 import com.merseyside.merseyLib.kotlin.utils.safeLet
-import com.merseyside.utils.attributes1.*
+import com.merseyside.utils.attributes.*
 import com.merseyside.utils.ext.getColorForState
 import com.merseyside.utils.view.ext.*
-import com.merseyside.utils.view.measure.logMeasureSpec
 import kotlin.math.min
 
 abstract class DayItemView(
@@ -33,8 +31,7 @@ abstract class DayItemView(
         context,
         attributeSet,
         R.styleable.DayItemView,
-        defStyleAttr,
-        0
+        defStyleAttr
     )
 
     protected val currentState: Int?

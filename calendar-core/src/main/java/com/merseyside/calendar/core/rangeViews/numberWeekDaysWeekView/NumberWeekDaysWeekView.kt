@@ -7,8 +7,8 @@ import com.merseyside.calendar.core.rangeViews.base.timeRange.adapter.TimeRangeA
 import com.merseyside.calendar.core.rangeViews.numberWeekDaysWeekView.model.NumberWeekDayViewModel
 import com.merseyside.calendar.core.rangeViews.weekView.WeekView
 import com.merseyside.merseyLib.time.ranges.WeekRange
-import com.merseyside.utils.attributes1.AttributeHelper
-import com.merseyside.utils.attributes1.int
+import com.merseyside.utils.attributes.AttributeHelper
+import com.merseyside.utils.attributes.int
 
 abstract class NumberWeekDaysWeekView<ViewModel : NumberWeekDayViewModel>(
     context: Context,

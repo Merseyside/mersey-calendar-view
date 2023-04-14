@@ -18,8 +18,8 @@ import com.merseyside.merseyLib.time.ext.contains
 import com.merseyside.merseyLib.time.ext.logHuman
 import com.merseyside.merseyLib.time.ranges.TimeRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.attributes1.AttributeHelper
-import com.merseyside.utils.attributes1.bool
+import com.merseyside.utils.attributes.AttributeHelper
+import com.merseyside.utils.attributes.bool
 import com.merseyside.utils.reflection.ReflectionUtils
 
 abstract class SelectableTimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(

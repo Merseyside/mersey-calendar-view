@@ -9,7 +9,7 @@ import androidx.core.graphics.toRectF
 import com.merseyside.calendar.core.R
 import com.merseyside.calendar.core.dayViews.numberView.model.NumberDayViewModel
 import com.merseyside.calendar.core.dayViews.base.DayItemView
-import com.merseyside.utils.attributes1.*
+import com.merseyside.utils.attributes.*
 import com.merseyside.utils.view.canvas.ext.drawRoundRectPreventClip
 import com.merseyside.utils.view.canvas.ext.drawTextCenter
 

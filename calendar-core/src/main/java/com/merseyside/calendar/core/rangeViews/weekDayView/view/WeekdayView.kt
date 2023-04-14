@@ -11,8 +11,8 @@ import com.merseyside.calendar.core.rangeViews.base.timeRange.model.TimeRangeVie
 import com.merseyside.calendar.core.rangeViews.weekDayView.model.WeekdayViewModel
 import com.merseyside.merseyLib.time.ext.getHuman
 import com.merseyside.merseyLib.time.units.DayOfWeek
-import com.merseyside.utils.attributes1.AttributeHelper
-import com.merseyside.utils.attributes1.int
+import com.merseyside.utils.attributes.AttributeHelper
+import com.merseyside.utils.attributes.int
 import com.merseyside.utils.view.canvas.ext.drawTextCenter
 
 class WeekdayView(

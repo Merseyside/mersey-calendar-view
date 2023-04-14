@@ -12,8 +12,8 @@ import com.merseyside.calendar.core.rangeViews.weekDayView.model.WeekdayViewMode
 import com.merseyside.merseyLib.time.ext.toWeekRange
 import com.merseyside.merseyLib.time.ranges.WeekRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.attributes1.AttributeHelper
-import com.merseyside.utils.attributes1.int
+import com.merseyside.utils.attributes.AttributeHelper
+import com.merseyside.utils.attributes.int
 import com.merseyside.utils.layout.AutofitLinearLayoutManager
 
 /**
