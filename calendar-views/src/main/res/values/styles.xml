@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Widget.Mersey.NumberWeekDayView" parent="Widget.Mersey.NumberDayView">
+    <style name="Widget.Mersey.NumberWeekDayView" parent="Widget.Mersey.Day.Number">
         <item name="numberWeekDayTextSize">@dimen/small_text_size</item>
 
         <item name="dayContentWidth">36dp</item>

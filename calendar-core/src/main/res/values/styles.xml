@@ -20,13 +20,13 @@
         <item name="dayCropCircle">true</item>
     </style>
 
-    <style name="Widget.Mersey.NumberDayView" parent="Widget.Mersey.CalendarItemView" />
+    <style name="Widget.Mersey.Day.Number" parent="Widget.Mersey.CalendarItemView" />
 
     <style name="Widget.Mersey.NumberDayView.Circle" parent="Widget.Mersey.CalendarItemView.Circle" />
     
-    <style name="Widget.Mersey.WeekDayView" parent="Widget.Mersey.NumberDayView" />
+    <style name="Widget.Mersey.WeekDayView" parent="Widget.Mersey.Day.Number" />
 
-    <style name="Widget.Mersey.MonthDayView" parent="Widget.Mersey.NumberDayView">
+    <style name="Widget.Mersey.MonthDayView" parent="Widget.Mersey.Day.Number">
         <item name="monthOutDayBackgroundColor">@color/month_out_day_view_background_default_selector</item>
         <item name="monthOutDayTextColor">@color/month_out_day_view_text_default_selector</item>
     </style>
