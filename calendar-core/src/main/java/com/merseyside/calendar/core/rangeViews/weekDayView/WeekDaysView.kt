@@ -14,7 +14,7 @@ import com.merseyside.merseyLib.time.ranges.WeekRange
 import com.merseyside.merseyLib.time.units.TimeUnit
 import com.merseyside.utils.attributes.AttributeHelper
 import com.merseyside.utils.attributes.int
-import com.merseyside.utils.layout.AutofitLinearLayoutManager
+import com.merseyside.utils.layoutManager.AutofitLinearLayoutManager
 
 /**
  * Your custom attrs have to be inherited from WeekView

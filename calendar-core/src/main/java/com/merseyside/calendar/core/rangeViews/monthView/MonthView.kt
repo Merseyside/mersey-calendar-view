@@ -13,7 +13,7 @@ import com.merseyside.merseyLib.time.ranges.TimeRange
 import com.merseyside.merseyLib.time.units.TimeUnit
 import com.merseyside.utils.attributes.AttributeHelper
 import com.merseyside.utils.attributes.bool
-import com.merseyside.utils.layout.AutofitGridLayoutManager
+import com.merseyside.utils.layoutManager.AutofitGridLayoutManager
 
 /**
  * Your custom attrs have to be inherited from MonthView
