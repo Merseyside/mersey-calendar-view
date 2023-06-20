@@ -10,7 +10,7 @@ import com.merseyside.merseyLib.time.ext.getPrevWeek
 import com.merseyside.merseyLib.time.ext.toWeekRange
 import com.merseyside.merseyLib.time.ranges.WeekRange
 import com.merseyside.merseyLib.time.units.TimeUnit
-import com.merseyside.utils.layout.AutofitLinearLayoutManager
+import com.merseyside.utils.layoutManager.AutofitLinearLayoutManager
 
 abstract class WeekView<ViewModel : NumberDayViewModel>(
     context: Context,
