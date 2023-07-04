@@ -7,7 +7,6 @@ plugins {
         id(mersey.kotlin.extension.id())
         plugin(kotlin.kapt)
     }
-    `android-maven-publish-config`
 }
 
 android {
