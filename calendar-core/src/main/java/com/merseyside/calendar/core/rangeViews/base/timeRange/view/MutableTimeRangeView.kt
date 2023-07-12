@@ -48,12 +48,12 @@ abstract class MutableTimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
     /**
      * Calculates and shows next
      */
-    fun next(onComplete: (Unit) -> Unit = {}) {
+    fun next(onComplete: () -> Unit = {}) {
         timeRange = getNextRange(timeRange)
         invalidateTimeRange(timeRange, onComplete = onComplete)
     }
 
-    fun previous(onComplete: (Unit) -> Unit = {}) {
+    fun previous(onComplete: () -> Unit = {}) {
         timeRange = getPrevRange(timeRange)
         invalidateTimeRange(timeRange, onComplete = onComplete)
     }

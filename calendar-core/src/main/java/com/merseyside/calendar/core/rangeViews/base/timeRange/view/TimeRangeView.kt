@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import androidx.annotation.CallSuper
+import androidx.annotation.MainThread
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.merseyside.adapters.core.async.doAsync
 import com.merseyside.calendar.core.R
@@ -59,13 +60,17 @@ abstract class TimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
     protected fun invalidateTimeRange(
         timeRange: TR,
         timeUnit: TimeUnit = timeRange.start,
-        onComplete: (Unit) -> Unit = {}
+        onComplete: () -> Unit = {}
     ) {
         val adapter = getTimeRangeAdapter(timeRange)
-        adapter.doAsync(onComplete) {
-            if (adapter.isEmpty()) fillAdapter(adapter, timeRange)
+        val onComplete: (Unit) -> Unit = { _ ->
             if (recycler.adapter != null) onDetachAdapter(recycler.adapter as TimeRangeAdapter<Model>)
             onAttachAdapter(timeUnit, timeRange, adapter)
+            onComplete()
+        }
+
+        adapter.doAsync(onComplete) {
+            if (adapter.isEmpty()) fillAdapter(adapter, timeRange)
         }
     }
 
@@ -87,8 +92,9 @@ abstract class TimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
     /**
      * Calls when adapter have filled with data and before attached to recycler.
      */
+    @MainThread
     @CallSuper
-    open suspend fun onAttachAdapter(
+    open fun onAttachAdapter(
         timeUnit: TimeUnit,
         timeRange: TR,
         adapter: TimeRangeAdapter<Model>
@@ -96,7 +102,7 @@ abstract class TimeRangeView<TR : TimeRange, Model : TimeRangeViewModel>(
         recycler.swapAdapter(adapter, false)
     }
 
-    open suspend fun onDetachAdapter(adapter: TimeRangeAdapter<Model>) {
+    open fun onDetachAdapter(adapter: TimeRangeAdapter<Model>) {
         adapter.workManager.cancel()
     }
 

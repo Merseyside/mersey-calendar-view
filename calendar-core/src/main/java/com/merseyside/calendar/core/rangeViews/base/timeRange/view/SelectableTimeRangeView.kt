@@ -58,7 +58,7 @@ abstract class SelectableTimeRangeView<TR : TimeRange, Model : TimeRangeViewMode
         }
     }
 
-    override suspend fun onAttachAdapter(
+    override fun onAttachAdapter(
         timeUnit: TimeUnit,
         timeRange: TR,
         adapter: TimeRangeAdapter<Model>
@@ -68,7 +68,7 @@ abstract class SelectableTimeRangeView<TR : TimeRange, Model : TimeRangeViewMode
         selectTime(timeUnit)
     }
 
-    override suspend fun onDetachAdapter(adapter: TimeRangeAdapter<Model>) {
+    override fun onDetachAdapter(adapter: TimeRangeAdapter<Model>) {
         super.onDetachAdapter(adapter)
         adapter.adapterConfig.getAdapterSelect()?.clear()
     }
