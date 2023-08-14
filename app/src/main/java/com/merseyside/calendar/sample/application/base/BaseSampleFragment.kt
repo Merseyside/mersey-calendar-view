@@ -1,43 +1,16 @@
 package com.merseyside.calendar.sample.application.base
 
-import android.view.MenuItem
-import androidx.annotation.CallSuper
 import androidx.databinding.ViewDataBinding
 import com.merseyside.archy.presentation.fragment.BaseBindingFragment
-import com.merseyside.archy.presentation.view.OnBackPressedListener
+import com.merseyside.archy.utils.ext.navigateUp
 
-abstract class BaseSampleFragment<V: ViewDataBinding> : BaseBindingFragment<V>(),
-    OnBackPressedListener {
+abstract class BaseSampleFragment<V: ViewDataBinding> : BaseBindingFragment<V>() {
 
-    abstract fun hasTitleBackButton(): Boolean
-
-    override fun onStart() {
-        super.onStart()
-        setTitleBackButtonEnabled()
-    }
-
-    private fun setTitleBackButtonEnabled() {
-        if (getActionBar() != null) {
-            getActionBar()!!.setDisplayHomeAsUpEnabled(hasTitleBackButton())
-
-            if (hasTitleBackButton()) {
-                setHasOptionsMenu(true)
-            }
-        }
-    }
-
-    @CallSuper
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-
-        if (id == android.R.id.home) {
-            goBack()
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onBackPressed(): Boolean {
+    override fun isNavigateUpEnabled(): Boolean {
         return true
+    }
+
+    override fun onNavigateUp() {
+        navigateUp()
     }
 }

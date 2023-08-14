@@ -13,7 +13,7 @@ class WeekdayAdapter(
 ) : TimeRangeAdapter<WeekdayViewModel>(adapterConfig) {
 
     override fun createItemViewModel(item: TimeRange) = WeekdayViewModel(item, pattern)
-    override fun getLayoutIdForPosition(position: Int) = R.layout.view_week_day
+    override fun getLayoutIdForViewType(viewType: Int) = R.layout.view_week_day
 
     companion object {
         operator fun invoke(

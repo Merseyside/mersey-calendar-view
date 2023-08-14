@@ -14,7 +14,7 @@ class SimpleMonthDayAdapter(
     isPrevMonthDayVisible: Boolean
 ) : MonthDayAdapter<MonthDayViewModel>(config, monthRange, isPrevMonthDayVisible) {
 
-    override fun getLayoutIdForPosition(position: Int) = R.layout.view_month_day
+    override fun getLayoutIdForViewType(viewType: Int) = R.layout.view_month_day
 
     companion object {
         operator fun invoke(

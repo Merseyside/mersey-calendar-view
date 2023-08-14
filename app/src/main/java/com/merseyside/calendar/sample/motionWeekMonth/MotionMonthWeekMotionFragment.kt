@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import com.merseyside.archy.presentation.fragment.BaseBindingFragment
+import com.merseyside.archy.utils.ext.navigateUp
 import com.merseyside.calendar.core.sample.R
 import com.merseyside.calendar.core.sample.databinding.FragmentMotionBinding
 import com.merseyside.merseyLib.time.Time
@@ -12,6 +13,13 @@ class MotionMonthWeekMotionFragment : BaseBindingFragment<FragmentMotionBinding>
     override fun getLayoutId() = R.layout.fragment_motion
 
     override fun getTitle(context: Context) = "Week month motion"
+    override fun isNavigateUpEnabled(): Boolean {
+        return true
+    }
+
+    override fun onNavigateUp() {
+        navigateUp()
+    }
 
     override fun performInjection(bundle: Bundle?, vararg params: Any) {}
 

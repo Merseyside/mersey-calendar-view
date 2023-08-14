@@ -14,7 +14,7 @@ class NumberWeekDayAdapter(
 
     override fun createItemViewModel(item: TimeRange) = NumberWeekDayViewModel(item, pattern)
 
-    override fun getLayoutIdForPosition(position: Int) = R.layout.view_number_week_day
+    override fun getLayoutIdForViewType(viewType: Int) = R.layout.view_number_week_day
 
     companion object {
         operator fun invoke(

@@ -85,23 +85,8 @@ abstract class SelectableTimeRangeView<TR : TimeRange, Model : TimeRangeViewMode
         }
     }
 
-    fun setOnTimeSelectListener(listener: TimeSelectListener) {
+    fun setOnTimeSelectListener(listener: TimeSelectListener?) {
         selectListener = listener
-    }
-
-    fun onSelect(block: ((TimeRange, Boolean, Boolean) -> Unit)?) {
-        selectListener = safeLet(block) {
-             object : TimeSelectListener {
-                override fun onSelect(
-                    timeRange: TimeRange,
-                    isSelect: Boolean,
-                    isSelectByUser: Boolean
-                ) {
-                    it.invoke(timeRange, isSelect, isSelectByUser)
-                }
-
-            }
-        }
     }
 
     private fun selectTime(timeUnit: TimeUnit) {

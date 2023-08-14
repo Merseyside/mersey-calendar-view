@@ -19,7 +19,7 @@ class WeekDayAdapter(adapterConfig: AdapterConfig<TimeRange, NumberDayViewModel>
         return position.toLong()
     }
 
-    override fun getLayoutIdForPosition(position: Int) = R.layout.view_number_day
+    override fun getLayoutIdForViewType(viewType: Int) = R.layout.view_number_day
 
     companion object {
 

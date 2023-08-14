@@ -8,7 +8,6 @@
             type="com.merseyside.calendar.core.rangeViews.weekDayView.model.WeekdayViewModel" />
     </data>
 
-
      <com.merseyside.calendar.core.rangeViews.weekDayView.view.WeekdayView
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
