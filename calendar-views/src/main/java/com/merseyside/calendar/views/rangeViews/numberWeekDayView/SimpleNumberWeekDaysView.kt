@@ -10,7 +10,7 @@ import com.merseyside.calendar.views.R
 import com.merseyside.calendar.views.databinding.ViewNumberWeekDayRecyclerBinding
 import com.merseyside.calendar.views.dayViews.numberWeekDayView.adapter.NumberWeekDayAdapter
 import com.merseyside.merseyLib.time.ranges.WeekRange
-import com.merseyside.utils.delegate.getValue
+
 import com.merseyside.utils.delegate.viewBinding
 
 class SimpleNumberWeekDaysWeekView(

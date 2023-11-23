@@ -14,7 +14,7 @@ abstract class TimeRangeViewModel(item: TimeRange) : AdapterViewModel<TimeRange>
         set(value) {
             if (field != value) {
                 field = value
-                notifyUpdate()
+                notifyPropertyChanged(BR.visible)
             }
         }
 
@@ -22,10 +22,5 @@ abstract class TimeRangeViewModel(item: TimeRange) : AdapterViewModel<TimeRange>
 
     override fun areItemsTheSame(other: TimeRange): Boolean {
         return item.start == other.start
-    }
-
-    override fun notifyUpdate() {
-        super.notifyUpdate()
-        notifyPropertyChanged(BR.visible)
     }
 }

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         numberDayModel="@{model}"
-        android:onClick="@{_ -> model.selectState.onSelect()}"
+        android:onClick="@{_ -> model.selectState.select()}"
         android:selected="@{model.selectState.selectedObservable.value}"
         isVisible="@{model.visible}" />
 

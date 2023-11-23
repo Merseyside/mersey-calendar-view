@@ -7,6 +7,8 @@ plugins {
         id(mersey.kotlin.extension.id())
         plugin(kotlin.kapt)
     }
+
+    `maven-publish-plugin`
 }
 
 android {
@@ -73,11 +75,11 @@ val merseyLibs = listOf(
 
 
 dependencies {
-    api(projects.calendarCore)
-
     implementation(common.serialization)
     api(common.bundles.mersey.time)
-    
+
+    api(projects.calendarCore)
+
     androidLibz.forEach { lib -> implementation(lib) }
     androidBundles.forEach { bundle -> implementation(bundle) }
     merseyLibs.forEach { lib -> implementation(lib) }

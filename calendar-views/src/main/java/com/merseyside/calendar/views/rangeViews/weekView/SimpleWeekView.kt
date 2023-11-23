@@ -11,7 +11,7 @@ import com.merseyside.calendar.core.rangeViews.weekView.recycler.WeekRecyclerVie
 import com.merseyside.calendar.views.R
 import com.merseyside.calendar.views.databinding.ViewWeekTimeUnitBinding
 import com.merseyside.merseyLib.time.ranges.WeekRange
-import com.merseyside.utils.delegate.getValue
+
 import com.merseyside.utils.delegate.viewBinding
 
 /**

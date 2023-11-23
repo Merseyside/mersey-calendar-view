@@ -9,7 +9,7 @@ dependencyResolutionManagement {
     }
 
     val group = "io.github.merseyside"
-    val catalogVersions = "1.7.7"
+    val catalogVersions = "1.7.9"
     versionCatalogs {
         val androidLibs by creating {
             from("$group:catalog-version-android:$catalogVersions")
@@ -30,3 +30,4 @@ include(":calendar-core")
 include(":calendar-views")
 
 rootProject.name = "mersey-calendar-view"
+rootProject.buildFileName = "build.gradle.kts"

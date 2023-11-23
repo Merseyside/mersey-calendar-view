@@ -10,7 +10,7 @@ import com.merseyside.calendar.views.R
 import com.merseyside.calendar.views.databinding.ViewWeekDayTimeUnitBinding
 import com.merseyside.merseyLib.time.Time
 import com.merseyside.merseyLib.time.ranges.WeekRange
-import com.merseyside.utils.delegate.getValue
+
 import com.merseyside.utils.delegate.viewBinding
 
 class SimpleWeekDaysView(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) :
